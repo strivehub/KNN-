@@ -7,10 +7,10 @@ import operator
 
 
 ##给出训练数据以及对应的类别
-def createDataSet():
-    group = array([[1.0,101.0], [5.0, 89.0], [115.0, 8.0], [108.0, 5.0]])
-    labels = ['爱情片', '爱情片', '动作片', '动作片']
-    return group, labels
+def createDataSet():  #取数据和对应的标签
+    group = array([[1.0,101.0], [5.0, 89.0], [115.0, 8.0], [108.0, 5.0]])  #训练样本
+    labels = ['爱情片', '爱情片', '动作片', '动作片']   #数据对应标签
+    return group, labels 
 
 
 ###通过KNN进行分类
@@ -41,7 +41,7 @@ def classify(input, dataSet, label, k):
 
 if __name__=="__main__":
     dataSet, labels = createDataSet()
-    input = array([2.0, 120.0])
-    K = 1
+    input = array([2.0, 120.0])  #待测试样本
+    K = 1  #最近邻则K是取1
     output =classify(input, dataSet, labels, K)
     print("测试数据为:", input, "分类结果为：", output)
